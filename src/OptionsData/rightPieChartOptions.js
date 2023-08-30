@@ -1,11 +1,15 @@
 export default {
   series: [37900, 376966, 403951, 29981, 215],
-  labels: [
-    "Info - 37900",
-    "Low - 376966",
-    "Medium - 403951",
-    "High - 29981",
-    "Critical - 215",
+  labels: ["Info", "Low", "Medium", "High", "Critical"],
+  responsive: [
+    {
+      breakpoint: 768,
+      options: {
+        chart: {
+          width: 375,
+        },
+      },
+    },
   ],
   chart: {
     type: "donut",

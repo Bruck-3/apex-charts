@@ -15,7 +15,9 @@
         <DonutChart :chartOptions="rightPieChartOptions" />
       </div>
     </div>
-    <VerticalBarChart></VerticalBarChart>
+    <div class="vertical-bar-chart-container">
+      <VerticalBarChart :chartOptions="rightPieChartOptions"></VerticalBarChart>
+    </div>
   </div>
 </template>
 
@@ -24,6 +26,7 @@ import DonutChart from "./components/DonutChart.vue";
 import VerticalBarChart from "./components/VerticalBarChart.vue";
 import leftPieChartOptions from "./OptionsData/leftPieChartOptions.js";
 import rightPieChartOptions from "./OptionsData/rightPieChartOptions.js";
+import verticalBarChartOptions from "./OptionsData/verticalBarChartOptions.js";
 export default {
   components: {
     DonutChart,
@@ -34,6 +37,7 @@ export default {
     return {
       leftPieChartOptions: leftPieChartOptions,
       rightPieChartOptions: rightPieChartOptions,
+      verticalBarChartOptions: verticalBarChartOptions,
     };
   },
 };
@@ -52,8 +56,8 @@ export default {
 }
 @media (max-width: 768px) {
   .image-container {
-    margin-top: 50px;
-    margin-bottom: 100px;
+    margin-top: 20px;
+    margin-bottom: 35px;
   }
 }
 .centered-image {
@@ -69,5 +73,22 @@ export default {
 .donut-chart-container {
   flex: 1;
   padding: 20px;
+}
+@media (max-width: 768px) {
+  .dual-donut-charts {
+    flex-direction: column; /* Stack charts vertically */
+    align-items: center; /* Center charts horizontally */
+  }
+
+  .donut-chart-container {
+    flex-basis: 100%; /* Take full width on smaller screens */
+    margin-bottom: 20px; /* Add margin between charts */
+    max-width: 345px;
+  }
+  .vertical-bar-chart-container {
+    flex-basis: 100%; /* Take full width on smaller screens */
+    margin-bottom: 20px; /* Add margin between charts */
+    max-width: 345px;
+  }
 }
 </style>

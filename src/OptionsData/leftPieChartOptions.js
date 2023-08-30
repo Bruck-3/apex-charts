@@ -1,11 +1,15 @@
 export default {
   series: [31205, 13, 9784, 31205, 31205],
-  labels: [
-    "Bot - 31205",
-    "Leak - 13",
-    "Paste - 9784",
-    "Bucket - 31205",
-    "Domain - 31205",
+  labels: ["Bot", "Leak", "Paste", "Bucket", "Domain"],
+  responsive: [
+    {
+      breakpoint: 768,
+      options: {
+        chart: {
+          width: 375,
+        },
+      },
+    },
   ],
   chart: {
     type: "donut",
@@ -14,7 +18,7 @@ export default {
   stroke: {
     width: 0,
   },
-  colors: ["#385EE5", "#CFD5F5", "#F15314", "#FFBA82", "#F4C304"],
+  colors: ["#385EE5", "#CFD5F5", "#F15314", "#FF842A", "#F4C304"],
   dataLabels: {
     enabled: false,
   },

@@ -1,11 +1,14 @@
 <template>
   <div id="chart" class="chart-container">
     <div class="chart-column">
-      <select name="date" id="date" value="Per Mounth">
-        <option value="Per Day">Per Day</option>
-        <option value="Per Mounth">Per Mounth</option>
-        <option value="Per Year">Per Year</option>
-      </select>
+      <div class="select-mobile">
+        <select name="date" id="date" v-model="selectedOption">
+          <option value="Day">Day</option>
+          <option value="Mounth">Mounth</option>
+          <option value="Year">Year</option>
+        </select>
+      </div>
+
       <apexchart
         type="bar"
         :options="chartOptions"
@@ -22,17 +25,9 @@ export default {
   components: {
     apexchart: ApexCharts,
   },
-  methods: {
-    customTooltip() {
-      return `
-        <div class="custom-tooltip">
-          <div class="tooltip-content">Event Description</div>
-        </div>
-      `;
-    },
-  },
   data() {
     return {
+      selectedOption: "Day",
       series: [
         {
           name: "Event Description",
@@ -80,6 +75,38 @@ export default {
             show: false,
           },
         },
+        responsive: [
+          {
+            breakpoint: 768,
+            options: {
+              chart: {
+                width: "100%",
+                height: 500,
+              },
+              title: {
+                text: "Events Volumes",
+                style: {
+                  fontSize: "18.99px",
+                  fontWeight: "500",
+                  fontFamily: "Outfit",
+                  color: "#0E1630",
+                  paddingTop: "-7px",
+                },
+              },
+              plotOptions: {
+                bar: {
+                  borderRadius: 12,
+                  borderRadiusApplication: "end",
+                  columnWidth: 10,
+                  distributed: true,
+                },
+              },
+              legend: {
+                position: "bottom",
+              },
+            },
+          },
+        ],
         dataLabels: {
           enabled: false,
         },
@@ -112,7 +139,13 @@ export default {
           showCrosshairs: false,
         },
         tooltip: {
-          custom: this.customTooltip,
+          custom: () => {
+            return `
+              <div class="custom-tooltip">
+                <div class="tooltip-content">Event Description</div>
+              </div>
+            `;
+          },
           fixed: {
             enabled: false,
             position: "topRight",
@@ -123,6 +156,14 @@ export default {
       },
     };
   },
+  // props: ["chartOptions"],
+  // computed: {
+  //   options() {
+  //     return {
+  //       ...this.chartOptions,
+  //     };
+  //   },
+  // },
 };
 </script>
 
