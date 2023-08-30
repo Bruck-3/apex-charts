@@ -67,8 +67,9 @@ body .apexcharts-legend-series {
 @media (max-width: 768px) {
   .chart-column {
     padding: 0;
-    margin: 0 20px;
-    width: 100%;
+    margin-left: 15px;
+
+    width: 90vw;
   }
 }
 .chart-column select {
@@ -94,7 +95,7 @@ body .apexcharts-legend-series {
 @media (max-width: 768px) {
   .chart-column select {
     margin: 0 0 -45px auto;
-      padding: 5px 50px 5px 8px;
+    padding: 5px 50px 5px 8px;
   }
 }
 @media (max-width: 768px) {
@@ -102,7 +103,6 @@ body .apexcharts-legend-series {
     padding-top: 20px;
     padding-bottom: 15px;
     padding-right: 20px;
-    
   }
 }
 .chart-column .toolbar {

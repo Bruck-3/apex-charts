@@ -70,7 +70,7 @@ export default {
       chartOptions: {
         chart: {
           type: "bar",
-          height: 580,
+          height: 680,
           toolbar: {
             show: false,
           },
