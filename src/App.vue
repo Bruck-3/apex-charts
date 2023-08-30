@@ -15,16 +15,19 @@
         <DonutChart :chartOptions="rightPieChartOptions" />
       </div>
     </div>
+    <VerticalBarChart></VerticalBarChart>
   </div>
 </template>
 
 <script>
 import DonutChart from "./components/DonutChart.vue";
+import VerticalBarChart from "./components/VerticalBarChart.vue";
 import leftPieChartOptions from "./OptionsData/leftPieChartOptions.js";
 import rightPieChartOptions from "./OptionsData/rightPieChartOptions.js";
 export default {
   components: {
     DonutChart,
+    VerticalBarChart,
   },
   methods: {},
   data() {

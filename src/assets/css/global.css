@@ -40,3 +40,55 @@ body .apexcharts-legend-series {
   color: #1f1f1f;
   font-family: "Outfit", sans-serif !important;
 }
+.chart-column {
+  padding: 50px 30px 30px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 3.9729397296905518px 29.797048568725586px 0px
+    rgba(0, 0, 0, 0.09);
+  margin: 70px 60px;
+}
+.chart-column select {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='11' viewBox='0 0 16 11' fill='none'%3E%3Cpath d='M2.25742 0.788818L8.18822 6.95483L14.119 0.788818L15.9409 2.69639L8.18822 10.7565L0.435547 2.69639L2.25742 0.788818Z' fill='%23363D51'/%3E%3C/svg%3E")
+    no-repeat 90% center;
+  z-index: 9999;
+  border-radius: 7px;
+  border: 2px solid rgba(54, 61, 81, 0.1);
+  margin: 0 0 -45px auto;
+  display: block;
+  padding: 10px 30px 10px 15px;
+  color: #363d51;
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+.chart-column .toolbar {
+  margin: 0 0 -35px auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 34px;
+  position: relative;
+  z-index: 99999;
+}
+.chart-column .toolbar button.active {
+  color: #2a3154;
+}
+.chart-column .toolbar button {
+  border: none;
+  background: transparent;
+  color: #2a3154;
+  font-family: "Outfit", sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 22px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 99999;
+}
