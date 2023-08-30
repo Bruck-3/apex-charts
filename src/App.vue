@@ -44,10 +44,15 @@ export default {
 .image-container {
   display: flex;
   justify-content: center;
-  margin-top: 93px;
-  margin-bottom: 213px;
+  margin-top: 30px;
+  margin-bottom: 70px;
 }
-
+@media (max-width: 768px) {
+  .image-container {
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+}
 .centered-image {
   max-width: 25%;
   max-height: 25%;
