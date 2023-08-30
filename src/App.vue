@@ -18,12 +18,16 @@
     <div class="vertical-bar-chart-container">
       <VerticalBarChart :chartOptions="rightPieChartOptions"></VerticalBarChart>
     </div>
+    <div class="vertical-bar-chart-container">
+      <BarChart></BarChart>
+    </div>
   </div>
 </template>
 
 <script>
 import DonutChart from "./components/DonutChart.vue";
 import VerticalBarChart from "./components/VerticalBarChart.vue";
+import BarChart from "./components/BarChart.vue";
 import leftPieChartOptions from "./OptionsData/leftPieChartOptions.js";
 import rightPieChartOptions from "./OptionsData/rightPieChartOptions.js";
 import verticalBarChartOptions from "./OptionsData/verticalBarChartOptions.js";
@@ -31,6 +35,7 @@ export default {
   components: {
     DonutChart,
     VerticalBarChart,
+    BarChart,
   },
   methods: {},
   data() {

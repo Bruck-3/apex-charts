@@ -4,7 +4,7 @@
       <div class="select-mobile">
         <select name="date" id="date" v-model="selectedOption">
           <option value="Day">Day</option>
-          <option value="Mounth">Mounth</option>
+          <option value="Mounth">Month</option>
           <option value="Year">Year</option>
         </select>
       </div>
@@ -141,39 +141,36 @@ export default {
         tooltip: {
           custom: () => {
             return `
+            <div class="tooltip-container">
               <div class="custom-tooltip">
                 <div class="tooltip-content">Event Description</div>
               </div>
+            </div>
             `;
           },
-          fixed: {
-            enabled: false,
-            position: "topRight",
-            offsetX: 0,
-            offsetY: 0,
+          onDatasetHover: {
+            highlightDataSeries: false,
           },
         },
       },
     };
   },
-  // props: ["chartOptions"],
-  // computed: {
-  //   options() {
-  //     return {
-  //       ...this.chartOptions,
-  //     };
-  //   },
-  // },
 };
 </script>
 
 <style lang="css">
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+}
 .custom-tooltip {
   position: relative;
   display: inline-block;
   background-color: #2a3154;
 }
 .tooltip-content {
+  position: absolute;
+  bottom: 0px; /* Adjust the distance from the element */
   margin: 5px 15px 5px 15px;
   color: #fff;
   font-family: Outfit;
@@ -181,11 +178,5 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-}
-.apexcharts-tooltip.apexcharts-theme-light {
-  border: none !important;
-}
-.apexcharts-bar-area:hover {
-  fill: #2a3154 !important;
 }
 </style>
