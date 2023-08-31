@@ -35,6 +35,7 @@ export default {
             {
               x: "2023/07/19",
               y: 6000,
+              z: 3000,
             },
             {
               x: "2023/07/20",
@@ -132,7 +133,7 @@ export default {
             borderRadius: 12,
             borderRadiusApplication: "end",
             columnWidth: 55,
-            distributed: true,
+            // distributed: true,
           },
         },
         x: {
@@ -148,9 +149,13 @@ export default {
             </div>
             `;
           },
-          onDatasetHover: {
-            highlightDataSeries: false,
-          },
+          // onDatasetHover: {
+          //   highlightDataSeries: true,
+          // },
+        },
+        highlight: {
+          // Enable highlighting on hover
+          enable: true,
         },
       },
     };
@@ -178,5 +183,11 @@ export default {
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+}
+.apexcharts-bar-area:hover {
+  fill: #2a3154 !important;
+}
+.apexcharts-tooltip.apexcharts-theme-light {
+  border: none !important;
 }
 </style>

@@ -22,7 +22,7 @@
         </button>
       </div>
       <apexchart
-        type="bar"
+        type="line"
         :options="chartOptions"
         :series="series"
       ></apexchart>
@@ -38,10 +38,12 @@ export default {
   },
   data() {
     return {
-      selectedInterval: "daily",
+      selectedInterval: "yearly",
       series: [
         {
-          data: [1000, 2500, 300, 1500, 800, 500, 2300, 4000],
+          data: [
+            1000, 2500, 300, 1500, 800, 500, 2300, 4000, 3000, 4000, 2000, 3000,
+          ],
         },
       ],
       chartOptions: {
@@ -51,6 +53,13 @@ export default {
           toolbar: {
             show: false,
           },
+        },
+        stroke: {
+          width: 5,
+          curve: "smooth",
+        },
+        markers: {
+          size: 0,
         },
         responsive: [
           {
@@ -89,11 +98,6 @@ export default {
           position: "top",
           offsetX: 0,
           offsetY: -10,
-          formatter: function (val, opts) {
-            const data =
-              opts.w.config.series[opts.seriesIndex].data[opts.dataPointIndex];
-            return `${val} (${data.additionalValue})`;
-          },
         },
         legend: {
           show: false,
@@ -113,30 +117,29 @@ export default {
           },
         },
         title: {
-          text: "New Events Collected",
+          text: "Commit Evolution Form Last Month",
           style: {
             fontSize: "30px",
             fontWeight: "500",
             fontFamily: "Outline",
             color: "#0E1630",
-            marginBottom: "60px",
           },
         },
         xaxis: {
           categories: [
-            "19 Jul 23",
-            "20 Jul 23",
-            "21 Jul 23",
-            "22 Jul 23",
-            "23 Jul 23",
-            "24 Jul 23",
-            "25 Jul 23",
-            "26 Jul 23",
+            "JAN",
+            "FEB",
+            "MAR",
+            "APR",
+            "MAY",
+            "JUN",
+            "JUL",
+            "AUG",
+            "SEP",
+            "OCT",
+            "NOV",
+            "DEC",
           ],
-        },
-        highlight: {
-          // Enable highlighting on hover
-          enable: true,
         },
       },
     };
