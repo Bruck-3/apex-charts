@@ -99,7 +99,7 @@ export default {
                   borderRadius: 12,
                   borderRadiusApplication: "end",
                   columnWidth: 10,
-                  distributed: true,
+                  distributed: false,
                 },
               },
               legend: {
@@ -180,7 +180,6 @@ export default {
   font-weight: 400;
   line-height: 18px;
 }
-
 .apexcharts-bar-area:hover {
   fill: #2a3154 !important;
 }
