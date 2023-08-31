@@ -136,7 +136,7 @@ export default {
         },
         highlight: {
           // Enable highlighting on hover
-          enable: true,
+          enable: false,
         },
       },
     };

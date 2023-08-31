@@ -22,7 +22,7 @@
         </button>
       </div>
       <apexchart
-        type="line"
+        type="area"
         :options="chartOptions"
         :series="series"
       ></apexchart>
@@ -57,6 +57,7 @@ export default {
         stroke: {
           width: 5,
           curve: "smooth",
+          colors: ["#4A62E0"],
         },
         markers: {
           size: 0,
@@ -89,9 +90,13 @@ export default {
           },
         },
         fill: {
-          type: "solid",
-          colors: ["#375EE4"],
-          opacity: 1,
+          type: "gradient",
+          colors: ["#4A62E0"],
+          gradient: {
+            shadeIntensity: 1,
+            opacityFrom: 0.7,
+            opacityTo: 0.5,
+          },
         },
         dataLabels: {
           enabled: false,
@@ -102,15 +107,31 @@ export default {
         legend: {
           show: false,
         },
+        yaxis: {
+          labels: {
+            formatter: function (number) {
+              const units = ["", "k", "M", "B", "T"];
+              const delimiter = 1000;
+
+              let unitIndex = 0;
+              while (number >= delimiter && unitIndex < units.length - 1) {
+                number /= delimiter;
+                unitIndex++;
+              }
+
+              return number + units[unitIndex];
+            },
+          },
+        },
         tooltip: {
           custom: () => {
             return `
-            <div class="tooltip-container">
-              <div class="custom-tooltip">
-                <div class="tooltip-content">Event Description</div>
+              <div class="tooltip-container">
+                <div class="custom-tooltip">
+                  <div class="tooltip-content">Event Description</div>
+                </div>
               </div>
-            </div>
-            `;
+              `;
           },
           onDatasetHover: {
             highlightDataSeries: false,
@@ -126,6 +147,9 @@ export default {
           },
         },
         xaxis: {
+          tooltip: {
+            enabled: false,
+          },
           categories: [
             "JAN",
             "FEB",
@@ -140,6 +164,9 @@ export default {
             "NOV",
             "DEC",
           ],
+        },
+        toolbar: {
+          show: false,
         },
       },
     };

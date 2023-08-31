@@ -149,13 +149,9 @@ export default {
             </div>
             `;
           },
-          // onDatasetHover: {
-          //   highlightDataSeries: true,
-          // },
-        },
-        highlight: {
-          // Enable highlighting on hover
-          enable: true,
+          onDatasetHover: {
+            highlightDataSeries: true,
+          },
         },
       },
     };
