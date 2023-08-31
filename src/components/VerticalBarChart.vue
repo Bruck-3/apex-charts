@@ -164,14 +164,14 @@ export default {
   position: relative;
   display: inline-block;
 }
+
 .custom-tooltip {
   position: relative;
   display: inline-block;
   background-color: #2a3154;
 }
+
 .tooltip-content {
-  position: absolute;
-  bottom: 0px; /* Adjust the distance from the element */
   margin: 5px 15px 5px 15px;
   color: #fff;
   font-family: Outfit;
@@ -180,6 +180,7 @@ export default {
   font-weight: 400;
   line-height: 18px;
 }
+
 .apexcharts-bar-area:hover {
   fill: #2a3154 !important;
 }

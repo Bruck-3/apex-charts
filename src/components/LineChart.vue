@@ -124,14 +124,19 @@ export default {
           },
         },
         tooltip: {
-          custom: () => {
+          custom: function ({ series, seriesIndex, dataPointIndex }) {
+            const dataValue = series[seriesIndex][dataPointIndex];
+
             return `
-              <div class="tooltip-container">
-                <div class="custom-tooltip">
-                  <div class="tooltip-content">Event Description</div>
-                </div>
-              </div>
-              `;
+    <div class="tooltip-container">
+      <div class="custom-tooltip">
+        <div class="tooltip-content">
+          <div class="tooltip-more-info">More Info</div>
+          <div class="tooltip-data tooltip-centered">${dataValue}</div>
+        </div>
+      </div>
+    </div>
+  `;
           },
           onDatasetHover: {
             highlightDataSeries: false,
@@ -181,4 +186,8 @@ export default {
   },
 };
 </script>
-<style lang="css"></style>
+<style lang="css">
+.tooltip-centered {
+  text-align: center;
+}
+</style>

@@ -74,7 +74,7 @@ export default {
         ],
         plotOptions: {
           bar: {
-            borderRadius: 12,
+            borderRadius: 10,
             horizontal: true,
             barHeight: "50%",
           },
@@ -99,11 +99,13 @@ export default {
           show: false,
         },
         tooltip: {
-          custom: () => {
+          custom: ({ seriesIndex, series, dataPointIndex }) => {
+            const dataValue = series[seriesIndex][dataPointIndex];
             return `
             <div class="tooltip-container">
               <div class="custom-tooltip">
-                <div class="tooltip-content">Event Description</div>
+                <div class="tooltip-content">
+                  ${dataValue}</div>
               </div>
             </div>
             `;
